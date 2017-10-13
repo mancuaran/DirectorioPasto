@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private Retrofit retrofit;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -45,14 +46,18 @@ public class MainActivity extends AppCompatActivity {
         DatosApi service = retrofit.create(DatosApi.class);
         Call<List<Directorio>> directorioCall=service.obtenerListaDirectorio();
 
-        directorioCall.enqueue(new Callback<List<Directorio>>() {
+        directorioCall.enqueue(new Callback<List<Directorio>>()
+        {
             @Override
-            public void onResponse(Call<List<Directorio>> call, Response<List<Directorio>> response) {
+            public void onResponse(Call<List<Directorio>> call, Response<List<Directorio>> response)
+            {
 
-                if(response.isSuccessful()){
+                if(response.isSuccessful())
+                {
 
                     List listaDirectorio= response.body();
-                    for (int i=0;i<listaDirectorio.size();i++){
+                    for (int i=0;i<listaDirectorio.size();i++)
+                    {
 
                         Directorio m= (Directorio) listaDirectorio.get(i);
                         adaptadorDirectorio = new RecyclerViewAdaptador(listaDirectorio);
@@ -67,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Directorio>> call, Throwable t) {
+            public void onFailure(Call<List<Directorio>> call, Throwable t)
+            {
 
                 Log.e(TAG,"onFailure" + t.getMessage());
 

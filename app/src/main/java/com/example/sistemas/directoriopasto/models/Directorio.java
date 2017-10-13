@@ -39,7 +39,8 @@ public class Directorio {
         return correoElectronico;
     }
 
-    public void setCorreoElectronico(String correoElectronico) {
+    public void setCorreoElectronico(String correoElectronico)
+    {
         this.correoElectronico = correoElectronico;
     }
 
@@ -55,7 +56,8 @@ public class Directorio {
         return nombreDelEstablecimiento;
     }
 
-    public void setNombreDelEstablecimiento(String nombreDelEstablecimiento) {
+    public void setNombreDelEstablecimiento(String nombreDelEstablecimiento)
+    {
         this.nombreDelEstablecimiento = nombreDelEstablecimiento;
     }
 
@@ -71,7 +73,8 @@ public class Directorio {
         return telefonosDeContacto;
     }
 
-    public void setTelefonosDeContacto(String telefonosDeContacto) {
+    public void setTelefonosDeContacto(String telefonosDeContacto)
+    {
         this.telefonosDeContacto = telefonosDeContacto;
     }
 
@@ -79,7 +82,8 @@ public class Directorio {
         return tipoDeEstablecimiento;
     }
 
-    public void setTipoDeEstablecimiento(String tipoDeEstablecimiento) {
+    public void setTipoDeEstablecimiento(String tipoDeEstablecimiento)
+    {
         this.tipoDeEstablecimiento = tipoDeEstablecimiento;
     }
 

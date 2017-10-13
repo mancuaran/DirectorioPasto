@@ -14,11 +14,14 @@ import java.util.List;
  * Created by sistemas on 13/10/17.
  */
 
-public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder> {
+public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder>
+{
 
 
-    public static class ViewHolder extends  RecyclerView.ViewHolder{
-        private TextView nombre , lugar;
+    public static class ViewHolder extends  RecyclerView.ViewHolder
+    {
+        private TextView nombre , lugar, direccion;
+
 
 
         public ViewHolder(View itemView) {
@@ -26,6 +29,7 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
             nombre =(TextView)itemView.findViewById(R.id.nombre);
             lugar =(TextView)itemView.findViewById(R.id.lugar);
+            direccion =(TextView)itemView.findViewById(R.id.direccion);
 
         }
     }
@@ -37,23 +41,25 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_directorio,parent,false);
         ViewHolder viewHolder= new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position)
+    {
         holder.nombre.setText(lista.get(position).getResponsable());
         holder.lugar.setText(lista.get(position).getNombreDelEstablecimiento());
-
-
+        holder.direccion.setText(lista.get(position).getDireccion());
 
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return lista.size();
     }
 }
